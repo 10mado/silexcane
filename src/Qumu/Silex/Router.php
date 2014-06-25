@@ -1,5 +1,5 @@
 <?php
-namespace App\Silex;
+namespace Qumu\Silex;
 
 class Router
 {
