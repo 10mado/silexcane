@@ -18,22 +18,22 @@ abstract class Router
 
     protected function routeGet($path, $controllerName, $bindName)
     {
-        $this->app->get($path, "\\{$this->naemspace}\\Controller\\" . $controllerName)->bind($bindName);
+        $this->app->get($path, "\\{$this->namespace}\\Controller\\" . $controllerName)->bind($bindName);
     }
 
     protected function routePost($path, $controllerName)
     {
-        $this->app->post($path, "\\{$this->naemspace}\\Controller\\" . $controllerName);
+        $this->app->post($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
     }
 
     protected function routePut($path, $controllerName)
     {
-        $this->app->put($path, "\\{$this->naemspace}\\Controller\\" . $controllerName);
+        $this->app->put($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
     }
 
     protected function routeDelete($path, $controllerName)
     {
-        $this->app->delete($path, "\\{$this->naemspace}\\Controller\\" . $controllerName);
+        $this->app->delete($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
     }
 
     protected function routePermanentRedirect($path, $bindName)
