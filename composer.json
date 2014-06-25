@@ -1,0 +1,31 @@
+{
+  "name": "qumu/silex",
+  "type": "library",
+  "description": "Supporting classes/files for using Silex",
+  "keywords": ["silex"],
+  "homepage": "https://github.com/qumu-inc/qumu-silex",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Hiroyuki Yamaoka",
+      "email": "yamaoka@qumu.co"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "silex/silex": "~1.2",
+    "vlucas/valitron": "~1.1"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-0": {
+      "Clover": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
