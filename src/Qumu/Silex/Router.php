@@ -1,7 +1,7 @@
 <?php
 namespace Qumu\Silex;
 
-use Siex\Application;
+use Silex\Application;
 
 abstract class Router
 {
