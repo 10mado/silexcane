@@ -1,7 +1,9 @@
 <?php
 namespace Qumu\Silex;
 
-class Router
+use Siex\Application;
+
+abstract class Router
 {
     protected $namespace = 'App';
     protected $app;
