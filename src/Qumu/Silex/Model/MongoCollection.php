@@ -1,6 +1,8 @@
 <?php
 namespace Qumu\Silex\Model;
 
+use Qumu\Silex\Application;
+
 abstract class MongoCollection
 {
     protected $app;
