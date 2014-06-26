@@ -1,5 +1,5 @@
 <?php
-namespace Qumu\Silex;
+namespace Qumu\Silex\Model;
 
 abstract class MongoCollection
 {
