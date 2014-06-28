@@ -1,6 +1,9 @@
 <?php
 namespace Qumu\Util;
 
+/**
+ * @deprecated
+ */
 class RandomString
 {
     public static function generate($length)
