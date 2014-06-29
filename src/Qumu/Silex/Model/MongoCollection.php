@@ -32,6 +32,11 @@ abstract class MongoCollection
         return $this->collection->findOne(['_id' => $this->toMongoId($id)]);
     }
 
+    public function count(array $query = [])
+    {
+        return $this->collection->count($query);
+    }
+
     public function insert(array $values)
     {
         // コピーオンライトを起こさないようにする
