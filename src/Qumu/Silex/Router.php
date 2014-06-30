@@ -4,6 +4,7 @@ namespace Qumu\Silex;
 abstract class Router
 {
     protected $namespace = 'App';
+    protected $isHttpsForced = false;
     protected $app;
 
     public function __construct(Application $app)
@@ -14,24 +15,59 @@ abstract class Router
     // ex) $this->routeGet('/', 'TopController::getAction', 'top');
     public abstract function route();
 
-    protected function routeGet($path, $controllerName, $bindName)
+    public function forceHttps()
     {
-        $this->app->get($path, "\\{$this->namespace}\\Controller\\" . $controllerName)->bind($bindName);
+        $this->isHttpsForced = true;
     }
 
-    protected function routePost($path, $controllerName)
+    protected function routeGet($path, $controllerName, $bindName, $forceHttps = false)
     {
-        $this->app->post($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        if ($this->isHttpsForced || $forceHttps) {
+            $this->app
+                ->get($path, "\\{$this->namespace}\\Controller\\" . $controllerName)
+                ->bind($bindName)
+                ->requireHttps();
+        } else {
+            $this->app
+                ->get($path, "\\{$this->namespace}\\Controller\\" . $controllerName)
+                ->bind($bindName);
+        }
     }
 
-    protected function routePut($path, $controllerName)
+    protected function routePost($path, $controllerName, $forceHttps = false)
     {
-        $this->app->put($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        if ($this->isHttpsForced || $forceHttps) {
+            $this->app
+                ->post($path, "\\{$this->namespace}\\Controller\\" . $controllerName)
+                ->requireHttps();
+        } else {
+            $this->app
+                ->post($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        }
     }
 
-    protected function routeDelete($path, $controllerName)
+    protected function routePut($path, $controllerName, $forceHttps = false)
     {
-        $this->app->delete($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        if ($this->isHttpsForced || $forceHttps) {
+            $this->app
+                ->put($path, "\\{$this->namespace}\\Controller\\" . $controllerName)
+                ->requireHttps();
+        } else {
+            $this->app
+                ->put($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        }
+    }
+
+    protected function routeDelete($path, $controllerName, $forceHttps = false)
+    {
+        if ($this->isHttpsForced || $forceHttps) {
+            $this->app
+                ->delete($path, "\\{$this->namespace}\\Controller\\" . $controllerName)
+                ->requireHttps();
+        } else {
+            $this->app
+                ->delete($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        }
     }
 
     protected function routePermanentRedirect($path, $bindName)
