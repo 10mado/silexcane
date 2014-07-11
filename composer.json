@@ -14,7 +14,7 @@
   "require": {
     "php": ">=5.4",
     "silex/silex": "~1.2",
-    "vlucas/valitron": "dev-master"
+    "vlucas/valitron": ">=1.1.8"
   },
   "require-dev": {
   },
