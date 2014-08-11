@@ -87,6 +87,15 @@ abstract class MongoCollection
         return $id;
     }
 
+    public function toMongoDate($secStr)
+    {
+        $sec = $secStr;
+        if (!is_int($secStr)) {
+            $sec = strtotime($secStr);
+        }
+        return new \MongoDate($sec);
+    }
+
     public function timestamp(array &$values)
     {
         if (!isset($values['created_at'])) {
