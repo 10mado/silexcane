@@ -1,7 +1,7 @@
 <?php
-namespace 10mado\Silex\Model;
+namespace Silexcane\Silex\Model;
 
-use 10mado\Silex\Application;
+use Silexcane\Silex\Application;
 
 abstract class MongoCollection
 {

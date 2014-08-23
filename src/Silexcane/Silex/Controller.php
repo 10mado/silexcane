@@ -1,8 +1,8 @@
 <?php
-namespace 10mado\Silex;
+namespace Silexcane\Silex;
 
-use 10mado\Silex\Exception\MustLoginException;
-use 10mado\Silex\Exception\MustLogoutException;
+use Silexcane\Silex\Exception\MustLoginException;
+use Silexcane\Silex\Exception\MustLogoutException;
 
 class Controller
 {

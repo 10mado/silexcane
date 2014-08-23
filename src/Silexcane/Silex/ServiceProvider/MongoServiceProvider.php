@@ -1,5 +1,5 @@
 <?php
-namespace 10mado\Silex\ServiceProvider;
+namespace Silexcane\Silex\ServiceProvider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;

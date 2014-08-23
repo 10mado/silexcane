@@ -1,5 +1,5 @@
 <?php
-namespace 10mado\Silex;
+namespace Silexcane\Silex;
 
 class Application extends \Silex\Application
 {

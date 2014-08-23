@@ -1,5 +1,5 @@
 <?php
-namespace 10mado\Silex\Model;
+namespace Silexcane\Silex\Model;
 
 use Doctrine\DBAL\Connection;
 

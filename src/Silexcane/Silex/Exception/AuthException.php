@@ -1,5 +1,5 @@
 <?php
-namespace 10mado\Silex\Exception;
+namespace Silexcane\Silex\Exception;
 
 class AuthException extends \Exception
 {

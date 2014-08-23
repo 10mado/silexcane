@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-0": {
-      "10mado": "src/"
+      "Silexcane": "src/"
     }
   },
   "extra": {

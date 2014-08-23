@@ -1,5 +1,5 @@
 <?php
-namespace 10mado\Enum;
+namespace Silexcane\Enum;
 
 abstract class Enum
 {

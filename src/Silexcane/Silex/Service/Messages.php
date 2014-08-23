@@ -1,8 +1,8 @@
 <?php
-namespace 10mado\Silex\Service;
+namespace Silexcane\Silex\Service;
 
-use 10mado\Silex\Application;
-use 10mado\Silex\Service;
+use Silexcane\Silex\Application;
+use Silexcane\Silex\Service;
 
 class Messages extends Service
 {
