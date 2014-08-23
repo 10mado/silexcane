@@ -1,5 +1,5 @@
 <?php
-namespace Qumu\Silex\ServiceProvider;
+namespace 10mado\Silex\ServiceProvider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;

@@ -1,8 +1,8 @@
 <?php
-namespace Qumu\Silex\Service;
+namespace 10mado\Silex\Service;
 
-use Qumu\Silex\Application;
-use Qumu\Silex\Service;
+use 10mado\Silex\Application;
+use 10mado\Silex\Service;
 
 class Messages extends Service
 {

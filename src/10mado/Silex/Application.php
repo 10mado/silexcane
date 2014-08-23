@@ -1,5 +1,5 @@
 <?php
-namespace Qumu\Silex;
+namespace 10mado\Silex;
 
 class Application extends \Silex\Application
 {

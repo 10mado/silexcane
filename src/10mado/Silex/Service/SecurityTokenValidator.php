@@ -1,7 +1,7 @@
 <?php
-namespace Qumu\Silex\Service;
+namespace 10mado\Silex\Service;
 
-use Qumu\Silex\Service;
+use 10mado\Silex\Service;
 
 class SecurityTokenValidator extends Service
 {

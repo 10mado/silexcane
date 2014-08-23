@@ -1,5 +1,5 @@
 <?php
-namespace Qumu\Enum;
+namespace 10mado\Enum;
 
 abstract class Enum
 {

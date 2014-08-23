@@ -1,7 +1,7 @@
 <?php
-namespace Qumu\Silex\Model;
+namespace 10mado\Silex\Model;
 
-use Qumu\Silex\Application;
+use 10mado\Silex\Application;
 
 abstract class MongoCollection
 {

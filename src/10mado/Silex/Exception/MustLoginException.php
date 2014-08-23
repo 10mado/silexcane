@@ -1,5 +1,5 @@
 <?php
-namespace Qumu\Silex\Exception;
+namespace 10mado\Silex\Exception;
 
 class MustLoginException extends \Exception
 {

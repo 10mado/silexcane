@@ -1,5 +1,5 @@
 <?php
-namespace Qumu\Util;
+namespace 10mado\Util;
 
 /**
  * @deprecated

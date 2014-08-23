@@ -1,8 +1,8 @@
 <?php
-namespace Qumu\Silex;
+namespace 10mado\Silex;
 
-use Qumu\Silex\Exception\MustLoginException;
-use Qumu\Silex\Exception\MustLogoutException;
+use 10mado\Silex\Exception\MustLoginException;
+use 10mado\Silex\Exception\MustLogoutException;
 
 class Controller
 {

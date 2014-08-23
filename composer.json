@@ -1,14 +1,14 @@
 {
-  "name": "qumu/silex",
+  "name": "10mado/silexcane",
   "type": "library",
   "description": "Supporting classes/files for using Silex",
   "keywords": ["silex"],
-  "homepage": "https://github.com/qumu-inc/qumu-silex",
+  "homepage": "https://github.com/10mado/silexcane",
   "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Hiroyuki Yamaoka",
-      "email": "yamaoka@qumu.co"
+      "email": "yamaoka@10mado.jp"
     }
   ],
   "require": {
@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-0": {
-      "Qumu": "src/"
+      "10mado": "src/"
     }
   },
   "extra": {
