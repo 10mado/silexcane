@@ -92,4 +92,18 @@ abstract class DbTable
             [(int) $id]
         );
     }
+
+    /**
+     * Returns the escaped string for like-queries.
+     *
+     * @param string $str
+     * @return string
+     */
+    protected function escapeLikeString($str)
+    {
+        $str = preg_replace('/\\\\/u', '\\\\', $str);
+        $str = preg_replace('/%/u', '\%', $str);
+        $str = preg_replace('/_/u', '\\_', $str);
+        return $str;
+    }
 }
