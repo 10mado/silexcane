@@ -70,6 +70,18 @@ abstract class Router
         }
     }
 
+    protected function routePatch($path, $controllerName, $forceHttps = false)
+    {
+        if ($this->isHttpsForced || $forceHttps) {
+            $this->app
+                ->patch($path, "\\{$this->namespace}\\Controller\\" . $controllerName)
+                ->requireHttps();
+        } else {
+            $this->app
+                ->patch($path, "\\{$this->namespace}\\Controller\\" . $controllerName);
+        }
+    }
+
     protected function routePermanentRedirect($path, $bindName)
     {
         $app = $this->app;
