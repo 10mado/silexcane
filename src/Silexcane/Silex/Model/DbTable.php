@@ -5,6 +5,9 @@ use Doctrine\DBAL\Connection;
 
 abstract class DbTable
 {
+    protected $createdAtRowName = 'created_at';
+    protected $updatedAtRowName = 'updated_at';
+
     abstract public function getTableName();
 
     /**
@@ -28,12 +31,12 @@ abstract class DbTable
      */
     public function insert(array $data)
     {
-        if (!array_key_exists('created_at', $data)) {
+        if (!array_key_exists($this->createdAtRowName, $data)) {
             $now = new \DateTime('now');
-            $data['created_at'] = $now->format('Y-m-d H:i:s');
+            $data[$this->createdAtRowName] = $now->format('Y-m-d H:i:s');
         }
-        if (array_key_exists('updated_at', $data)) {
-            unset($data['updated_at']);
+        if (array_key_exists($this->updatedAtRowName, $data)) {
+            unset($data[$this->updatedAtRowName]);
         }
         return $this->conn->insert($this->getTableName(), $data);
     }
@@ -47,12 +50,12 @@ abstract class DbTable
      */
     public function update(array $data, array $identifier)
     {
-        if (array_key_exists('created_at', $data)) {
-            unset($data['created_at']);
+        if (array_key_exists($this->createdAtRowName, $data)) {
+            unset($data[$this->createdAtRowName]);
         }
-        if (!array_key_exists('updated_at', $data)) {
+        if (!array_key_exists($this->updatedAtRowName, $data)) {
             $now = new \DateTime('now');
-            $data['updated_at'] = $now->format('Y-m-d H:i:s');
+            $data[$this->updatedAtRowName] = $now->format('Y-m-d H:i:s');
         }
         return $this->conn->update($this->getTableName(), $data, $identifier);
     }
