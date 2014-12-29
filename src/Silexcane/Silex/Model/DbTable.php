@@ -5,8 +5,10 @@ use Doctrine\DBAL\Connection;
 
 abstract class DbTable
 {
+    protected $now;
     protected $createdAtRowName = 'created_at';
     protected $updatedAtRowName = 'updated_at';
+    protected $dateFormat = 'Y-m-d H:i:s';
 
     abstract public function getTableName();
 
@@ -21,6 +23,7 @@ abstract class DbTable
     public function __construct(Connection $conn)
     {
         $this->conn = $conn;
+        $this->now = new \DateTime('now');
     }
 
     /**
@@ -32,8 +35,7 @@ abstract class DbTable
     public function insert(array $data)
     {
         if (!array_key_exists($this->createdAtRowName, $data)) {
-            $now = new \DateTime('now');
-            $data[$this->createdAtRowName] = $now->format('Y-m-d H:i:s');
+            $data[$this->createdAtRowName] = $this->now->format($this->dateFormat);
         }
         if (array_key_exists($this->updatedAtRowName, $data)) {
             unset($data[$this->updatedAtRowName]);
@@ -54,8 +56,7 @@ abstract class DbTable
             unset($data[$this->createdAtRowName]);
         }
         if (!array_key_exists($this->updatedAtRowName, $data)) {
-            $now = new \DateTime('now');
-            $data[$this->updatedAtRowName] = $now->format('Y-m-d H:i:s');
+            $data[$this->updatedAtRowName] = $this->now->format($this->dateFormat);
         }
         return $this->conn->update($this->getTableName(), $data, $identifier);
     }
