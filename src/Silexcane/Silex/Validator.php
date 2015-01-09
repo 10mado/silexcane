@@ -14,7 +14,7 @@ abstract class Validator
         if ($data instanceof Params) {
             $data = $data->toArray();
         } elseif (!is_array($data)) {
-            throw new \RuntimeException('$data should be array or Params')
+            throw new \RuntimeException('$data should be array or Params');
         }
         $this->v = new V($data);
         $this->labels();
