@@ -1,12 +1,22 @@
 <?php
-namespace Silexcane\Silex;
+namespace Silexcane\Silex\Service;
 
-class Params implements \ArrayAccess
+use Silexcane\Silex\Service;
+
+class Params extends Service implements \ArrayAccess
 {
     protected $values = [];
 
-    public function __construct(array $requestParameters, array $names)
+    public function import(array $names = [], array $requestParameters = null)
     {
+        if (is_null($requestParameters)) {
+            $requestMethod = $this->app['request']->getMethod();
+            if ($requestMethod === 'GET') {
+                $requestParameters = $this->app['request']->query->all();
+            } elseif ($requestMethod === 'POST') {
+                $requestParameters = $this->app['request']->request->all();
+            }
+        }
         foreach ($names as $name) {
             $key = str_replace('-', '_', $name);
             if (isset($requestParameters[$name])) {
@@ -15,6 +25,7 @@ class Params implements \ArrayAccess
                 $this->values[$key] = null;
             }
         }
+        return $this;
     }
 
     public function toArray()

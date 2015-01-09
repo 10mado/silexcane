@@ -1,7 +1,7 @@
 <?php
 namespace Silexcane\Silex;
 
-use Silexcane\Silex\Params;
+use Silexcane\Silex\Service\Params;
 use Valitron\Validator as V;
 
 abstract class Validator
