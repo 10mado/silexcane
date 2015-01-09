@@ -7,9 +7,9 @@ abstract class Validator
 {
     protected $v;
 
-    public function __construct(array $data)
+    public function __construct($data, $lang = 'ja')
     {
-        V::lang('ja');
+        V::lang($lang);
         $this->v = new V($data);
         $this->labels();
         $this->rules();
