@@ -1,6 +1,7 @@
 <?php
 namespace Silexcane\Silex;
 
+use Silexcane\Silex\Params;
 use Valitron\Validator as V;
 
 abstract class Validator
@@ -10,6 +11,11 @@ abstract class Validator
     public function __construct($data, $lang = 'ja')
     {
         V::lang($lang);
+        if ($data instanceof Params) {
+            $data = $data->toArray();
+        } elseif (!is_array($data)) {
+            throw new \RuntimeException('$data should be array or Params')
+        }
         $this->v = new V($data);
         $this->labels();
         $this->rules();
