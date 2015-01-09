@@ -1,5 +1,5 @@
 <?php
-namespace App\Silex;
+namespace Silexcane\Silex;
 
 class Params implements \ArrayAccess
 {
