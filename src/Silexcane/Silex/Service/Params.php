@@ -13,7 +13,8 @@ class Params extends Service implements \ArrayAccess
             $requestMethod = $this->app['request']->getMethod();
             if ($requestMethod === 'GET') {
                 $requestParameters = $this->app['request']->query->all();
-            } elseif ($requestMethod === 'POST') {
+            } elseif (in_array($requestMethod, ['POST', 'PUT', 'DELETE'])) {
+                // will be emulated using _method parameter
                 $requestParameters = $this->app['request']->request->all();
             }
         }
