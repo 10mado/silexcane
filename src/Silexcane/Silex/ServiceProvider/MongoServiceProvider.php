@@ -1,8 +1,8 @@
 <?php
 namespace Silexcane\Silex\ServiceProvider;
 
+use Pimple\ServiceProviderInterface;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
 
 class MongoServiceProvider implements ServiceProviderInterface
 {
@@ -17,9 +17,5 @@ class MongoServiceProvider implements ServiceProviderInterface
         $app['mongodb.client'] = $app->share(function() use ($app) {
             return new \MongoClient($app['mongodb.server'], $app['mongodb.options']);
         });
-    }
-
-    public function boot(Application $app)
-    {
     }
 }

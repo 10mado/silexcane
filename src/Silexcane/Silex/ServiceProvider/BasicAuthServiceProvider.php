@@ -1,13 +1,14 @@
 <?php
 namespace Silexcane\Silex\ServiceProvider;
 
+use Pimple\ServiceProviderInterface;
+use Silex\Api\BootableProviderInterface;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class BasicAuthServiceProvider implements ServiceProviderInterface
+class BasicAuthServiceProvider implements ServiceProviderInterface, BootableProviderInterface
 {
     public function register(Application $app)
     {
