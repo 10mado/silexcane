@@ -1,12 +1,12 @@
 <?php
 namespace Silexcane\Silex\ServiceProvider;
 
+use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Silex\Application;
 
 class MongoServiceProvider implements ServiceProviderInterface
 {
-    public function register(Application $app)
+    public function register(Container $app)
     {
         if (!isset($app['mongodb.server'])) {
             $app['mongodb.server'] = 'mongodb://localhost';

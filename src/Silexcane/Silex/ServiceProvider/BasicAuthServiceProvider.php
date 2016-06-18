@@ -1,6 +1,7 @@
 <?php
 namespace Silexcane\Silex\ServiceProvider;
 
+use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Silex\Api\BootableProviderInterface;
 use Silex\Application;
@@ -10,7 +11,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class BasicAuthServiceProvider implements ServiceProviderInterface, BootableProviderInterface
 {
-    public function register(Application $app)
+    public function register(Container $app)
     {
         $app->before(function (Request $req) use ($app) {
 
