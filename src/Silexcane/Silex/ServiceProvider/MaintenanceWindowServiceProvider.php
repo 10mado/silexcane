@@ -3,18 +3,19 @@ namespace Silexcane\Silex\ServiceProvider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Usage:
  *
- * $app->register(Silexcane\Silex\ServiceProvider\MaintenanceServiceProvider([
+ * $app->register(new Silexcane\Silex\ServiceProvider\MaintenanceWindowServiceProvider([
  *     'lock' => __DIR__ . '/../maintenance',
  *     'html' => __DIR__ . '/../web/maintenance.html',
  * ]));
  *
  * or
  *
- * $app->register(Silexcane\Silex\ServiceProvider\MaintenanceServiceProvider([
+ * $app->register(new Silexcane\Silex\ServiceProvider\MaintenanceWindowServiceProvider([
  *     'lock' => __DIR__ . '/../maintenance',
  *     'twig_template' => 'maintenance.html',
  * ]));
